@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        user-select: none;
+      }
+      .content {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        background: rgb(2, 38, 52);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .animation span {
+        font-size: 10rem;
+        padding: 0.6rem;
+        color: white;
+        cursor: pointer;
+      }
+      .animation {
+        display: flex;
+        column-gap: 30px;
+        font-family: 'Times New Roman', Times, serif, sans-serif;
+        font-weight: bold;
+      }
+      .animation .span3 {
+        transition: 2s;
+        color: #ff0000ad;
+      }
+      .span2::after {
+        content: '5';
+        transform: translate(100px, 100px) rotateZ(-45deg);
+        position: absolute;
+        filter: blur(8px);
+        transition: 2s;
+        opacity: 0;
+        color: #09bc0f;
+      }
+      .animation:hover .span2::after {
+        transform: translate(50px, 0) rotateZ(0deg);
+        filter: blur(0px);
+        opacity: 1;
+      }
+      .animation:hover .span3 {
+        transform: translate(100px, -100px) rotateZ(40deg);
+        filter: blur(8px);
+        opacity: 0;
+      }
+      .animation::before {
+        content: 'bye 2024';
+        position: absolute;
+        color: #03f8bf;
+        font-size: 2em;
+        text-align: center;
+        margin: auto;
+        transform: translate(200px);
+        transition: 5s;
+      }
+      .animation:hover::before {
+        content: 'hello 2025';
+        color: #03f8bf;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="animation">
+        <span class="span0">2</span>
+        <span class="span1">0</span>
+        <span class="span2">2</span>
+        <span class="span3">4</span>
+      </div>
+    </div>
+  </body>
+</html>
